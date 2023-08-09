@@ -77,13 +77,12 @@
         }
     </style>
     <script>
-        document.querySelector('article a[data-text="근무표"]').addEventListener('click', function(event) {
-            event.preventDefault();
-        
-            console.log("클릭");
-        });
+
     </script>
 
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
 </head>
 
@@ -101,10 +100,10 @@
 
  <body>
     <section>
-        <article><a href="#" data-text="근무표" onclick="handleClick(event)">클릭하세요</a></article>
-
-        <article><a href="#" data-text="Etch" onclick="Etch();"> </a></article>
-        <article><a href="#" data-text="압력" onclick="압력();"> </a></article>
+        <article><button type="button" class="btn btn-primary" onclick="handleClick(event)">근무표</button></article>
+        <article><button type="button" class="btn btn-info">Etch</button></article>
+        <article><button type="button" class="btn btn-success">압력</button></article>
+        <!-- <article><a href="#" data-text="근무표" onclick="handleClick(event)"></a></article> -->
     </section>
 </body>
             <div class="profile-div"

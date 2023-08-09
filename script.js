@@ -21,7 +21,6 @@ function allTextFile() {
 }
 function handleClick(event) {
     event.preventDefault();
-    console.log("a");
          const profileDiv = document.querySelector('.profile-div');
      if (profileDiv.style.display === 'none') {
          profileDiv.style.display = 'block';
