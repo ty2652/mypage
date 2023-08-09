@@ -10,6 +10,8 @@ function etchTextFile() {
 }
 
 function allTextFile() {
+    const profileDiv = document.querySelector('.profile-div');
+    profileDiv.style.display = 'none'
     fetch('images/전체주기.txt')
     .then(Response => Response.text())
     .then(data => {
@@ -23,20 +25,14 @@ function handleClick(event) {
     event.preventDefault();
          const profileDiv = document.querySelector('.profile-div');
      if (profileDiv.style.display === 'none') {
+        document.getElementById('output').textContent = '';
          profileDiv.style.display = 'block';
      } else {
          profileDiv.style.display = 'none';
      }
 }
-// document.querySelector('.toggle-btn').addEventListener('click',function(event) {
-//     event.preventDefault();
-//     const profileDiv = document.querySelector('.profile-div');
-//     if (profileDiv.style.display === 'none') {
-//         profileDiv.style.display = 'block';
-//     } else {
-//         profileDiv.style.display = 'none';
-//     }
-// });
+
+
 
 
 

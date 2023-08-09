@@ -73,3 +73,6 @@ input#username {
   {
     transform: translatey(100%) rotatex(90deg);
   }
+#output {
+    font-family: 'Courier New', monospace;
+}

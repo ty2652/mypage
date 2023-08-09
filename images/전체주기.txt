@@ -1,49 +1,53 @@
-DFN207	58		EHF331-PC12	-2249	EOX208-PC3	-3089		TBP100-A	53	THD106-B	61	TSB313-2	-410
-DFN208	65		EMT112-A	-2	EOX213-PC1	-3053		TBP100-B	178	THD106-D	100	TSB313-3	-402
-DFN212	-11		EMT112-B	-2	EOX213-PC23	-3082		TBP100-C	76	THD113-A	80	TSB314-2	-385
-DFN313	-674		EMT113-A	-3	EOX214-PC1	-2829		TBP100-D	178	THD113-B	-2	TSB314-3	-457
-DFN327	-130		EMT113-B	-10	EOX214-PC23	-3083		TBP119-A	139	THD113-C	-21	TSB315-2	-408
-DHE105	123		EMT215-A	-7	EOX215-PC1	-2779		TBP119-B	40	THD114-A	32	TSB315-3	-386
-DHE106	107		EMT215-B	14	EOX215-PC2	-3073		TBP119-C	41	THD114-B	79	TSB316-2	-462
-DHE117	105		EMT216-A	-15	EOX215-PC3	-757		TBP119-D	41	THD114-C	-23	TSB316-3	-415
-DHE118	115		EMT216-B	-19	EOX300-123	-2572		TBP203-A	144	THD120-A	78	TSB318-2	-393
-DHE121-Source,Beam	119		EMT217-A	12	EOX306-PC1	-2802		TBP203-B	114	THD120-B	20	TSB318-3	-393
-DHI101	106		EMT217-B	-223	EOX306-PC2	-3056		TBP203-C	143	THD120-C	139	TST202-A	-80
-DHI109	15		EMT218-A	14	EOX306-PC3	-274		TBP203-D	137	THD127-A	-43	TST202-B	-21
-DHI111	109		EMT218-B	10	EOX309-PC123	-3047		TCD108-A	-137	THD127-B	23	TST202-C	-80
-DHI113	105		EMT219-A	-4	EOX315-PC1	-6273		TCD108-B	-90	THD127-C	-12	TST204-A	-140
-DHI115	118		EMT219-B	-63	EOX410-PC1	-6329		TCD108-C	140	THD300-A	179	TST204-B	-137
-DHI120	134		EMT220-A	6	EOX428-PC123	-3089		TCD122-A	-188	THD300-B	42	TST204-D	146
-DHI122-Source,Beam	111		EMT220-B	0	EOX520-PC1	-2102		TCD122-B	-8	THD300-C	48	TST214-A	-14
-DLP224	163		EMT221-A	0	EOX520-PC2	-2102		TCD122-C	-201	TOT208-A	0	TST214-B	-14
-DLP225	130		EMT221-B	4	EOX520-PC3	-2102		TCM311-2	-3094	TOT208-B	159	TST214-D	-157
-DLP226	124		EMT222-A	35	EPD305-PC123	-254		TCM311-3	-459	TOT208-C	157	TST321-A	13
-DLP227	38		EMT222-B	29	EPL210-A	-78			TCP107-RC1	153	TOT208-D	7	TST321-B	66
-DLP228	69		EMT223-A	-21	EPL210-B	112			TCP107-RC2	-46	TPS210-A	46	TST321-C	-186
-DLP229	13		EMT223-B	-18	EPL319-PC1	-2929		TCP109-RC1	-230	TPS210-B	20	TWC213-A	35
-DLP230	83		EMT225-A	9	EPL319-PC2	-3083		THA126-RC1	43	TPS212-A	-45	TWC213-B	29
-DLP236	134		EMT225-B	33	EPL401-A	45			THA126-RC2	56	TPS212-B	51	TWC214-A	61
-DLP237	162		EMT313-A	-8	EPL404-A	31			THA223-RC1	-8	TPS215-A	-44	TWC214-B	67
-DLP239	-21		EMT313-B	0	EPL404-B	135			THA223-RC2	62	TPS215-B	11	TWC317-A	66
-DLP240	-101		EMT314-A	13	EPL404-D	41			THA226-PM2	-464	TPS221-A	56	TWC317-B	127
-DLP307	148		EMT314-B	-13	EPL406-A	52			THA226-PM3	-448	TPS221-B	87	TWC317-C	127
-DLP320	-241		EMW431-A	-40	EPL406-B	171			THD101-A	169	TPS222-A	48	TWC317-D	113
-DLP322	117		EMW431-B	99	EPL406-D	81			THD101-B	107	TPS222-B	30	TWC318-A	114
-DLP333-TUBE1	-114	EOX105-PC1	-73	EPL407-A	66			THD101-D	53	TPT112-A	69	TWC318-B	30
-DLP333-TUBE2	-86	EOX105-PC2	-2115	EPL407-B	109			THD102-A	126	TPT112-B	-208	TWC318-C	30
-DMI102	-32		EOX106-PC1	-3061	EPL407-D	-21			THD102-B	91	TPT112-C	62	TWC318-D	30
-DMI103	108		EOX106-PC2	-3047	EPL408-A	57			THD102-C	-15	TPT112-D	-98	TWC319-A	54
-DMI104	159		EOX107-PC1	-2678	EPL408-B	140			THD103-A	139	TPT121-A	147	TWC319-B	72
-DMI108	103		EOX107-PC2	-2678	EPL408-D	89			THD103-B	48	TPT121-B	75	TWC320-A	66
-DMI112	104		EOX108-PC1	-683	EPL409-A	22			THD103-D	-1	TPT121-C	109	TWC320-B	4
-DMI114	108		EOX108-PC2	-1238	EPL409-B	35			THD104-A	97	TPT121-D	165	TPT116-C	18
-DMI116	107		EOX110-PC12	-3045	EPL409-C	42			THD104-B	16	TPT125-B	75	TPT117-A	36
-DMI124-Source,Beam	42		EOX110-PC3	-1787	EPL422-A	160	THD104-D	140	TPT125-D27	TPT117-B	96
-			EOX204-PC1	-3066	EPL422-B	160			THD105-A	138	TSB200-2	-410	TPT117-C	43
-DLP319	-813		EOX204-PC2	-2934	EPL425-A	127			THD105-B	139	TSB200-3	-388	TOT326-A	-88
-DLP404	-88		EOX205-PC1	-2894	EPL425-B	134			THD105-D	140	TSB206-2	-417	TOT326-B	91
-DLP405	-127		EOX205-PC2	-2678	EPL425-D	33			THD106-A	25	TSB206-3	-416	TOT326-C	138
-DLP406	-430		EOX207-PC1	-2760	EPL509-A	133			TSB207-2	-389				TOT326-D	120
-DLP407	-6874		EOX207-PC23	-3054	EPL509-B	122			TSB207-3	-389				THD129-A	-119
-DLP408	-6261		EOX208-PC12	-3084	EPL509-C	19								THD129-B	-119
-DLP424	-6028														THD129-D	98
+Scrubber PM 주기 도달 확인	                    	                    	                    	                    	                    	                    	                    	                    	                    	                    	                    
+                    	                    	                    	                    	                    	                    	                    	                    	                    	                    	                    	                    
+Diffusion           	                    	Etch                	                    	                    	                    	Thin Flim           	                    	                    	                    	                    	                    
+통합 코드               	PM 주기 도달일           	통합 코드               	PM 주기 도달일           	통합 코드               	PM 주기 도달일           	통합 코드               	PM 주기 도달일           	통합 코드               	PM 주기 도달일           	통합 코드               	PM 주기 도달일           
+DFN207              	57                  	EHF331-PC12         	-2250               	EOX208-PC3          	-3090               	TBP100-A            	52                  	THD106-B            	60                  	TSB313-2            	-411                
+DFN208              	64                  	EMT112-A            	-3                  	EOX213-PC1          	-3054               	TBP100-B            	177                 	THD106-D            	99                  	TSB313-3            	-403                
+DFN212              	-12                 	EMT112-B            	-3                  	EOX213-PC23         	-3083               	TBP100-C            	75                  	THD113-A            	79                  	TSB314-2            	-386                
+DFN313              	-675                	EMT113-A            	-4                  	EOX214-PC1          	-2830               	TBP100-D            	177                 	THD113-B            	-3                  	TSB314-3            	-458                
+DFN327              	-131                	EMT113-B            	-11                 	EOX214-PC23         	-3084               	TBP119-A            	138                 	THD113-C            	-22                 	TSB315-2            	-409                
+DHE105              	122                 	EMT215-A            	-8                  	EOX215-PC1          	-2780               	TBP119-B            	39                  	THD114-A            	31                  	TSB315-3            	-387                
+DHE106              	106                 	EMT215-B            	13                  	EOX215-PC2          	-3074               	TBP119-C            	40                  	THD114-B            	78                  	TSB316-2            	-463                
+DHE117              	104                 	EMT216-A            	-16                 	EOX215-PC3          	-758                	TBP119-D            	40                  	THD114-C            	-24                 	TSB316-3            	-416                
+DHE118              	114                 	EMT216-B            	-20                 	EOX300-123          	-2573               	TBP203-A            	143                 	THD120-A            	77                  	TSB318-2            	-394                
+DHE121-Source,Beam  	118                 	EMT217-A            	11                  	EOX306-PC1          	-2803               	TBP203-B            	113                 	THD120-B            	19                  	TSB318-3            	-394                
+DHI101              	105                 	EMT217-B            	-224                	EOX306-PC2          	-3057               	TBP203-C            	142                 	THD120-C            	138                 	TST202-A            	-81                 
+DHI109              	14                  	EMT218-A            	13                  	EOX306-PC3          	-275                	TBP203-D            	136                 	THD127-A            	-44                 	TST202-B            	-22                 
+DHI111              	108                 	EMT218-B            	9                   	EOX309-PC123        	-3048               	TCD108-A            	-138                	THD127-B            	22                  	TST202-C            	-81                 
+DHI113              	104                 	EMT219-A            	-5                  	EOX315-PC1          	-6274               	TCD108-B            	-91                 	THD127-C            	-13                 	TST204-A            	-141                
+DHI115              	117                 	EMT219-B            	-64                 	EOX410-PC1          	-6330               	TCD108-C            	139                 	THD300-A            	178                 	TST204-B            	-138                
+DHI120              	133                 	EMT220-A            	5                   	EOX428-PC123        	-3090               	TCD122-A            	-189                	THD300-B            	41                  	TST204-D            	145                 
+DHI122-Source,Beam  	110                 	EMT220-B            	-1                  	EOX520-PC1          	-2103               	TCD122-B            	-9                  	THD300-C            	47                  	TST214-A            	-15                 
+DLP224              	162                 	EMT221-A            	-1                  	EOX520-PC2          	-2103               	TCD122-C            	-202                	TOT208-A            	-1                  	TST214-B            	-15                 
+DLP225              	129                 	EMT221-B            	3                   	EOX520-PC3          	-2103               	TCM311-2            	-3095               	TOT208-B            	158                 	TST214-D            	-158                
+DLP226              	123                 	EMT222-A            	34                  	EPD305-PC123        	-255                	TCM311-3            	-460                	TOT208-C            	156                 	TST321-A            	12                  
+DLP227              	37                  	EMT222-B            	28                  	EPL210-A            	-79                 	TCP107-RC1          	152                 	TOT208-D            	6                   	TST321-B            	65                  
+DLP228              	68                  	EMT223-A            	-22                 	EPL210-B            	111                 	TCP107-RC2          	-47                 	TPS210-A            	45                  	TST321-C            	-187                
+DLP229              	12                  	EMT223-B            	-19                 	EPL319-PC1          	-2930               	TCP109-RC1          	-231                	TPS210-B            	19                  	TWC213-A            	34                  
+DLP230              	82                  	EMT225-A            	8                   	EPL319-PC2          	-3084               	THA126-RC1          	42                  	TPS212-A            	-46                 	TWC213-B            	28                  
+DLP236              	133                 	EMT225-B            	32                  	EPL401-A            	44                  	THA126-RC2          	55                  	TPS212-B            	50                  	TWC214-A            	60                  
+DLP237              	161                 	EMT313-A            	-9                  	EPL404-A            	30                  	THA223-RC1          	-9                  	TPS215-A            	-45                 	TWC214-B            	66                  
+DLP239              	-22                 	EMT313-B            	-1                  	EPL404-B            	134                 	THA223-RC2          	61                  	TPS215-B            	10                  	TWC317-A            	65                  
+DLP240              	-102                	EMT314-A            	12                  	EPL404-D            	40                  	THA226-PM2          	-465                	TPS221-A            	55                  	TWC317-B            	126                 
+DLP307              	147                 	EMT314-B            	-14                 	EPL406-A            	51                  	THA226-PM3          	-449                	TPS221-B            	86                  	TWC317-C            	126                 
+DLP320              	-242                	EMW431-A            	-41                 	EPL406-B            	170                 	THD101-A            	168                 	TPS222-A            	47                  	TWC317-D            	112                 
+DLP322              	116                 	EMW431-B            	98                  	EPL406-D            	80                  	THD101-B            	106                 	TPS222-B            	29                  	TWC318-A            	113                 
+DLP333-TUBE1        	-115                	EOX105-PC1          	-74                 	EPL407-A            	65                  	THD101-D            	52                  	TPT112-A            	68                  	TWC318-B            	29                  
+DLP333-TUBE2        	-87                 	EOX105-PC2          	-2116               	EPL407-B            	108                 	THD102-A            	125                 	TPT112-B            	-209                	TWC318-C            	29                  
+DMI102              	-33                 	EOX106-PC1          	-3062               	EPL407-D            	-22                 	THD102-B            	90                  	TPT112-C            	61                  	TWC318-D            	29                  
+DMI103              	107                 	EOX106-PC2          	-3048               	EPL408-A            	56                  	THD102-C            	-16                 	TPT112-D            	-99                 	TWC319-A            	53                  
+DMI104              	158                 	EOX107-PC1          	-2679               	EPL408-B            	139                 	THD103-A            	138                 	TPT121-A            	146                 	TWC319-B            	71                  
+DMI108              	102                 	EOX107-PC2          	-2679               	EPL408-D            	88                  	THD103-B            	47                  	TPT121-B            	74                  	TWC320-A            	65                  
+DMI112              	103                 	EOX108-PC1          	-684                	EPL409-A            	21                  	THD103-D            	-2                  	TPT121-C            	108                 	TWC320-B            	3                   
+DMI114              	107                 	EOX108-PC2          	-1239               	EPL409-B            	34                  	THD104-A            	96                  	TPT121-D            	164                 	TPT116-C            	17                  
+DMI116              	106                 	EOX110-PC12         	-3046               	EPL409-C            	41                  	THD104-B            	15                  	TPT125-B            	74                  	TPT117-A            	35                  
+DMI124-Source,Beam  	41                  	EOX110-PC3          	-1788               	EPL422-A            	159                 	THD104-D            	139                 	TPT125-D            	26                  	TPT117-B            	95                  
+                    	                    	EOX204-PC1          	-3067               	EPL422-B            	159                 	THD105-A            	137                 	TSB200-2            	-411                	TPT117-C            	42                  
+DLP319              	-814                	EOX204-PC2          	-2935               	EPL425-A            	126                 	THD105-B            	138                 	TSB200-3            	-389                	TOT326-A            	-89                 
+DLP404              	-89                 	EOX205-PC1          	-2895               	EPL425-B            	133                 	THD105-D            	139                 	TSB206-2            	-418                	TOT326-B            	90                  
+DLP405              	-128                	EOX205-PC2          	-2679               	EPL425-D            	32                  	THD106-A            	24                  	TSB206-3            	-417                	TOT326-C            	137                 
+DLP406              	-431                	EOX207-PC1          	-2761               	EPL509-A            	132                 	                    	                    	TSB207-2            	-390                	TOT326-D            	119                 
+DLP407              	-6875               	EOX207-PC23         	-3055               	EPL509-B            	121                 	                    	                    	TSB207-3            	-390                	THD129-A            	-120                
+DLP408              	-6262               	EOX208-PC12         	-3085               	EPL509-C            	18                  	                    	                    	                    	                    	THD129-B            	-120                
+DLP424              	-6029               	                    	                    	                    	                    	                    	                    	                    	                    	THD129-D            	97                  
