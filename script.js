@@ -21,14 +21,45 @@ function allTextFile() {
 }
 
 
-const users = ['ps'];
 
 function checkUser() {
-    const username = document.getElementById('username').value;
+    const usernameInput = document.getElementById('username');
+    const validUsername = "ps"; // 원하는 유효한 사용자 이름으로 변경하세요.
 
-    if (users.includes(username)) {
-        window.location.href = "roster.html"; // 유저명 확인 후 리다이렉션할 페이지
+    if (usernameInput.value === validUsername) {
+        goToNextPage(); // 이 함수에서 토큰이 생성되고 다음 페이지로 리다이렉트됩니다.
     } else {
-        alert('올바른 키워드가 아닙니다.');
+        alert('잘못된 사용자 이름입니다.');
     }
+}
+
+function generateToken() {
+    const array = new Uint32Array(1);
+    window.crypto.getRandomValues(array);
+    return array[0].toString(36);
+}
+
+function goToNextPage() {
+    const token = generateToken();
+    localStorage.setItem('validUserToken', token);
+
+    // Redirect to nextpage.html with the token as a parameter
+    window.location.href = "roster.html?token=" + token;
+}
+
+function getURLParameter(name) {
+    return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [,""])[1].replace(/\+/g, '%20')) || null;
+}
+
+function checkAccess() {
+    const tokenFromLocalStorage = localStorage.getItem('validUserToken');
+    
+    if (!tokenFromLocalStorage || tokenFromLocalStorage !== validToken) {
+        alert('!접근 불가!'); // 메시지 박스 띄우기
+        window.location.href = 'index.html'; // 사용자를 index.html로 리다이렉트
+    }
+}
+
+if (window.location.pathname.endsWith('roster.html')) {
+    checkAccess();
 }
