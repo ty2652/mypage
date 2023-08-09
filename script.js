@@ -19,6 +19,25 @@ function allTextFile() {
         console.error('Error reading the file:', error);
     });
 }
+function handleClick(event) {
+    event.preventDefault();
+    console.log("a");
+         const profileDiv = document.querySelector('.profile-div');
+     if (profileDiv.style.display === 'none') {
+         profileDiv.style.display = 'block';
+     } else {
+         profileDiv.style.display = 'none';
+     }
+}
+// document.querySelector('.toggle-btn').addEventListener('click',function(event) {
+//     event.preventDefault();
+//     const profileDiv = document.querySelector('.profile-div');
+//     if (profileDiv.style.display === 'none') {
+//         profileDiv.style.display = 'block';
+//     } else {
+//         profileDiv.style.display = 'none';
+//     }
+// });
 
 
 
@@ -63,3 +82,4 @@ function checkAccess() {
 if (window.location.pathname.endsWith('roster.html')) {
     checkAccess();
 }
+
