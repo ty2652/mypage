@@ -105,24 +105,34 @@
         <article><button type="button" class="btn btn-success">압력</button></article> -->
         <article><a href="#" data-text="근무표" onclick="handleClick(event)"></a></article>
         <article><a href="#" data-text="전체주기" onclick="allTextFile()"></a></article>
-        <article><a href="#" data-text="압력" onclick=""></a></article>
+        <!--<article><a href="#" data-text="압력" onclick=""></a></article>-->
     </section>
 </body>
             <div class="profile-div"
             style="display: none;"><img 
             src="images/근무자.png"
             class="profile">
-
             <img
-            src="images/월초.png"
+            src="images/당월초.png"
             class="profile">
-            
             <img
-            src="images/월말.png"
+            src="images/당월말.png"
+            class="profile">
+            <img
+            src="images/익월초.png"
+            class="profile">
+            <img
+            src="images/익월말.png"
             class="profile"></div>
 
+            <div class="searchInput-center">
+                <input type="text" id="searchInput" placeholder="텍스트 검색..." onkeyup="forceUppercaseEnglish(event); searchText();" onkeypress="return allowEnglishNumbersAndSpecialCharacters(event);">
+            </div>
+            <div>
+                <pre id="output"></pre>
+            </div>
+            
 
-            <pre id="output"></pre>
     <!-- </div>
     <div class="main_form">
         <details>

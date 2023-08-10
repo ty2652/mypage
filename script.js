@@ -21,6 +21,66 @@ function allTextFile() {
         console.error('Error reading the file:', error);
     });
 }
+
+
+function searchText() {
+    let searchTerm = document.getElementById('searchInput').value;
+    let output = document.getElementById('output');
+
+    // 검색어가 없는 경우
+    if (!searchTerm) {
+        output.innerHTML = output.textContent;  // 하이라이트 제거
+        return;
+    }
+
+    let regex = new RegExp(searchTerm, 'gi');
+    let matches = output.textContent.match(regex);
+
+    // 검색어가 텍스트에 없는 경우
+    if (!matches || matches.length === 0) {
+        output.innerHTML = output.textContent;  // 하이라이트 제거
+        alert('검색 결과가 없습니다.');
+        return;
+    }
+
+    // 검색 결과를 노란색으로 강조합니다.
+    let highlightedText = output.textContent.replace(regex, match => `<span class="highlight">${match}</span>`);
+    output.innerHTML = highlightedText;
+
+    // 모바일 환경에서 첫 번째 검색 결과 위치로 스크롤 이동
+    if (window.innerWidth <= 768) {  // 화면 너비가 768px 이하인 경우를 모바일로 간주
+        let firstHighlight = document.querySelector('.highlight');
+        if (firstHighlight) {
+            firstHighlight.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    }
+}
+function forceUppercaseEnglish(e) {
+    let input = e.target;
+    // 영어 알파벳, 숫자 및 특수문자만 허용하고, 알파벳은 대문자로 변환합니다.
+    input.value = input.value.replace(/[^a-zA-Z0-9!@#$%^&*()_+{}[\]:;<>,.?~\\/-]/g, '').toUpperCase();
+}
+
+function allowEnglishNumbersAndSpecialCharacters(e) {
+    let charCode = (typeof e.which === "number") ? e.which : e.keyCode;
+    
+    // 영어 알파벳, 숫자, 및 일부 특수문자 범위를 체크합니다.
+    if ((charCode >= 65 && charCode <= 90) || // A-Z
+        (charCode >= 97 && charCode <= 122) || // a-z
+        (charCode >= 48 && charCode <= 57) || // 0-9
+        (charCode >= 33 && charCode <= 47) || // 특수문자
+        (charCode >= 58 && charCode <= 64) || // 특수문자
+        (charCode >= 91 && charCode <= 96) || // 특수문자
+        (charCode >= 123 && charCode <= 126) || // 특수문자
+        charCode === 8) { // Backspace
+        return true;
+    }
+    return false; // 허용하지 않는 문자 입력 차단
+}
+
+
+
+
 function handleClick(event) {
     event.preventDefault();
          const profileDiv = document.querySelector('.profile-div');
