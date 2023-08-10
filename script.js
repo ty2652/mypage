@@ -157,3 +157,56 @@ function addUser() {
         console.error('Error:', error);
     });
 }
+
+function checkUserOnServer(username) {
+    // 요청 주소는 공인 IP와 연결된 서버의 주소로 변경해야 합니다.
+    const serverEndpoint = "ts2652.iptime.org:3000/check-user";
+
+    fetch(serverEndpoint, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ username: username })  // 예를 들어 username 데이터를 서버에 보냅니다.
+    })
+    .then(response => response.json())
+    .then(data => {
+        if(data.valid) {
+            console.log("Valid username");
+        } else {
+            console.log("Invalid username");
+        }
+    })
+    .catch(error => {
+        console.error('There was an error!', error);
+    });
+}
+document.getElementById('checkUserButton').addEventListener('click', async () => {
+    const username = document.getElementById('usernameInput').value;
+    if (!username) {
+        alert('Please enter a username.');
+        return;
+    }
+
+    const serverEndpoint = 'ts2652.iptime.org:3000/check-user'; // Replace with your server's endpoint
+
+    try {
+        const response = await fetch(serverEndpoint, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ username: username })
+        });
+
+        const data = await response.json();
+        if (data.valid) {
+            alert('User is valid.');
+        } else {
+            alert('User is not valid.');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('An error occurred while checking the user.');
+    }
+});
