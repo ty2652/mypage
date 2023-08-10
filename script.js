@@ -138,3 +138,22 @@ if (window.location.pathname.endsWith('roster.html')) {
     checkAccess();
 }
 
+function addUser() {
+    const username = document.getElementById('username').value;
+
+    fetch('/add-user', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username: username }),
+    })
+    .then(response => response.json())
+    .then(data => {
+        // Assuming the server returns a JSON with a 'message' field
+        document.getElementById('result').textContent = data.message;
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
