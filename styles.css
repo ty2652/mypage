@@ -8,7 +8,6 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
     
 }
 
@@ -17,9 +16,10 @@ form {
     flex-direction: column;
     gap: 10px;
 }
-input#username {
-    text-align: center;  /* 수평 중앙 배치 */
-    padding: 10px 2px;  /* 상하 패딩을 10px로 설정하여 수직 중앙에 배치 */
+.ceter-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
   a{

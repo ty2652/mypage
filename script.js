@@ -95,18 +95,6 @@ function handleClick(event) {
 
 
 
-
-function checkUser() {
-    const usernameInput = document.getElementById('username');
-    const validUsername = "ps"; // 원하는 유효한 사용자 이름으로 변경하세요.
-
-    if (usernameInput.value === validUsername) {
-        goToNextPage(); // 이 함수에서 토큰이 생성되고 다음 페이지로 리다이렉트됩니다.
-    } else {
-        alert('잘못된 사용자 이름입니다.');
-    }
-}
-
 function generateToken() {
     const array = new Uint32Array(1);
     window.crypto.getRandomValues(array);
@@ -138,36 +126,61 @@ if (window.location.pathname.endsWith('roster.html')) {
     checkAccess();
 }
 
-function addUser() {
-    const username = document.getElementById('username').value;
+// function addUser() {
+//     const username = document.getElementById('user_name').value;
+//     const serverEndpoint = "http://ts2652.iptime.org:3000/add-user"; // 서버 주소로 변경
 
-    fetch('/add-user', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ username: username }),
-    })
-    .then(response => response.json())
-    .then(data => {
-        // Assuming the server returns a JSON with a 'message' field
-        document.getElementById('result').textContent = data.message;
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
-}
+//     fetch(serverEndpoint, {
+//       method: 'POST',
+//       headers: {
+//         'Content-Type': 'application/json'
+//       },
+//       body: JSON.stringify({ username: username })
+//     })
+//     .then(response => response.json())
+//     .then(data => {
+//       if (data.message) {
+//         alert(data.message); // 서버에서 보낸 메시지를 알림으로 표시
+//       }
+//     })
+//     .catch(error => {
+//       console.error('There was an error!', error);
+//     });
+//   }
+
+//   document.getElementById('checkUserButton').addEventListener('click', () => {
+//     const username = document.getElementById('usernameInput').value;
+//     const serverEndpoint = "http://ts2652.iptime.org:3000/check-user"; // 서버 주소로 변경
+
+//     fetch(serverEndpoint, {
+//       method: 'POST',
+//       headers: {
+//         'Content-Type': 'application/json'
+//       },
+//       body: JSON.stringify({ username: username })
+//     })
+//     .then(response => response.json())
+//     .then(data => {
+//       if (data.valid) {
+//         goToNextPage(); // 이 함수에서 토큰이 생성되고 다음 페이지로 리다이렉트됩니다.
+//     } else {
+//         alert('잘못된 사용자 이름입니다.');
+//     }
+//     })
+//     .catch(error => {
+//       console.error('There was an error!', error);
+//     });
+//   });
 
 function checkUserOnServer(username) {
-    // 요청 주소는 공인 IP와 연결된 서버의 주소로 변경해야 합니다.
-    const serverEndpoint = "ts2652.iptime.org:3000/check-user";
+    const serverEndpoint = "/check-user";  // 프록시 서버를 통한 요청
 
     fetch(serverEndpoint, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ username: username })  // 예를 들어 username 데이터를 서버에 보냅니다.
+        body: JSON.stringify({ username: username })
     })
     .then(response => response.json())
     .then(data => {
@@ -181,32 +194,3 @@ function checkUserOnServer(username) {
         console.error('There was an error!', error);
     });
 }
-document.getElementById('checkUserButton').addEventListener('click', async () => {
-    const username = document.getElementById('usernameInput').value;
-    if (!username) {
-        alert('Please enter a username.');
-        return;
-    }
-
-    const serverEndpoint = 'ts2652.iptime.org:3000/check-user'; // Replace with your server's endpoint
-
-    try {
-        const response = await fetch(serverEndpoint, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ username: username })
-        });
-
-        const data = await response.json();
-        if (data.valid) {
-            alert('User is valid.');
-        } else {
-            alert('User is not valid.');
-        }
-    } catch (error) {
-        console.error('Error:', error);
-        alert('An error occurred while checking the user.');
-    }
-});
