@@ -98,7 +98,7 @@ function handleClick(event) {
 
 function Checkuser() {
     const id = document.getElementById('username').value;
-    fetch(`http://localhost:3000/check-user/${id}`)
+    fetch(`https://port-0-psdb-ac2nll73fmem.sel3.cloudtype.app/check-user/${id}`)
     .then(response => {
         if (response.ok) {
             return response.json();
@@ -129,7 +129,7 @@ function Checkuser() {
 function accessProtectedPage() {
     const token = localStorage.getItem('token');
     if (token) {
-        fetch('http://localhost:3000/protected', {
+        fetch('https://port-0-psdb-ac2nll73fmem.sel3.cloudtype.app/protected', {
             headers: {
                 'Authorization': `Bearer ${token}`
             }
