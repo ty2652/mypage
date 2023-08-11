@@ -153,3 +153,8 @@ setInterval(() => {
         });
     }
 }, 5 * 60 * 1000); // 5분마다 실행 (밀리초 단위)
+function logout(){
+    localStorage.removeItem('token');
+      localStorage.removeItem('refreshToken'); // 리프레시 토큰도 삭제
+      alert('Logged out successfully');
+ }

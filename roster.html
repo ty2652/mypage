@@ -77,6 +77,11 @@
         }
     </style>
     <script>
+        
+ window.addEventListener('beforeunload', function(event) {
+    logout(); // 페이지가 닫힐 때 logout 함수 실행
+});
+
     function redirectToLogin() {
         alert('비정상적인 접근 입니다. 저에게 문의하세요.');
         window.location.href = 'https://ltuk.kr/index.html';
