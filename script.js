@@ -110,7 +110,6 @@ function Checkuser() {
         if (data.token) {
             // 서버로부터 받은 토큰 값을 로컬 스토리지에 저장
             localStorage.setItem('token', data.token);
-            console.log('Token received:', data.token);
             
             // 보호된 페이지로 이동
             accessProtectedPage();
@@ -118,7 +117,7 @@ function Checkuser() {
             // 보호된 페이지로 이동
             accessProtectedPage();
         } else {
-            console.log(data.user);
+            alert('암호가 틀렸습니다. 저에게 문의하세요.');
         }
     })
     .catch(error => {

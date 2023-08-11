@@ -11,28 +11,89 @@
     <title>ps_WEB</title>
     <link rel="stylesheet" href="styles.css">
 
-    <!--스타일-->
+    <!-- 스타일 -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Yeon+Sung&display=swap');
 
+        .center-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
         .main_form {
             max-width: 100%;
-            height: auto; 
+            height: auto;
+        }
+
+        .text-button-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px; /* 원하는 여백을 조절하세요 */
+        }
+
+        /* 새로운 버튼 및 텍스트 스타일 */
+        .custom-button,
+        .custom-text {
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .custom-button:hover,
+        .custom-text:hover {
+            background-color: #0056b3;
+        }
+
+        /* 새로운 텍스트 필드 스타일 */
+        .custom-text {
+            background-color: #e1f0ff; /* 약간의 하늘색 계열 배경색 */
+            border: 1px solid #007bff; /* 테두리 원래 색상 유지 */
+            border-radius: 4px;
+            padding: 8px;
+            font-family: "맑은 고딕", sans-serif; /* 맑은 고딕 폰트 */
+            color: black; /* 글씨색 검은색 */
+        }
+
+        /* 이미지 스타일 */
+        .image-container {
+            position: relative;
+        }
+
+        /* 하단 작은 텍스트 스타일 */
+        .small-text {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            font-size: 12px;
+            color: gray;
+            margin: 5px;
         }
 
     </style>
 
-
 </head>
 
-<div class="center-container">
-    <form id="loginForm">
-        <h1><img src="images/twitter_header_photo_2.png"></h1>
-        <input type="text" id="username" name="username">
-        <input type="button" value="접속" onclick="Checkuser()">
-    </form>
-</div>
+<body>
+    <div class="center-container">
+        <div class="image-container">
+            <h1><img src="images/twitter_header_photo_2.png"></h1>
+            <p class="small-text">by tuk</p>
+        </div>
+        <div class="text-button-container">
+            <input type="text" id="username" name="username" class="custom-text" placeholder="암호를 입력하세요...">
+            <input type="button" value="접속" onclick="Checkuser()" class="custom-button">
+        </div>
+    </div>
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
+</body>
 
 </html>

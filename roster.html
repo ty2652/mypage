@@ -78,26 +78,19 @@
     </style>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            function redirectToIndex() {
-                console.log('Token not available');
+            function redirectToIndex() { 
                 // 알람 메시지 표시
-                const alertMessage = document.createElement('p');
-                alertMessage.innerText = 'You need a valid token to access this page.';
-                document.body.appendChild(alertMessage);
+                alert('암호가 틀렸습니다. 저에게 문의하세요.');
                 
-                // 3초 후에 index.html로 이동
-                setTimeout(() => {
-                    window.location.href = 'https://ltuk.kr/index.html';
-                }, 2000);
+                // 바로 index.html로 이동
+                window.location.href = 'https://ltuk.kr/index.html';
             }
 
             function checkTokenAndRedirect() {
                 const token = localStorage.getItem('token');
                 if (!token) {
                     redirectToIndex();
-                } else {
-                    console.log('Token in Roster Page:', token);
-                }
+                }  
             }
 
             checkTokenAndRedirect(); // 페이지 로드 시 함수 호출
