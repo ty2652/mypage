@@ -10,8 +10,13 @@ function etchTextFile() {
 }
 
 function allTextFile() {
+    const searchInput = document.querySelector('.searchInput-center');
     const profileDiv = document.querySelector('.profile-div');
+
+    searchInput.classList.add('searchInput-center');
+    searchInput.style.display = 'flex';
     profileDiv.style.display = 'none'
+
     fetch('images/전체주기.txt')
     .then(Response => Response.text())
     .then(data => {
@@ -78,119 +83,17 @@ function allowEnglishNumbersAndSpecialCharacters(e) {
     return false; // 허용하지 않는 문자 입력 차단
 }
 
-
-
-
 function handleClick(event) {
     event.preventDefault();
          const profileDiv = document.querySelector('.profile-div');
+         const searchInput = document.querySelector('.searchInput-center');
      if (profileDiv.style.display === 'none') {
         document.getElementById('output').textContent = '';
          profileDiv.style.display = 'block';
+         searchInput.style.display = 'none';
      } else {
+        searchInput.classList.add('searchInput-center');
+        searchInput.style.display = 'flex';
          profileDiv.style.display = 'none';
      }
-}
-
-
-
-
-function generateToken() {
-    const array = new Uint32Array(1);
-    window.crypto.getRandomValues(array);
-    return array[0].toString(36);
-}
-
-function goToNextPage() {
-    const token = generateToken();
-    localStorage.setItem('validUserToken', token);
-
-    // Redirect to nextpage.html with the token as a parameter
-    window.location.href = "roster.html?token=" + token;
-}
-
-function getURLParameter(name) {
-    return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [,""])[1].replace(/\+/g, '%20')) || null;
-}
-
-function checkAccess() {
-    const tokenFromLocalStorage = localStorage.getItem('validUserToken');
-    
-    if (!tokenFromLocalStorage || tokenFromLocalStorage !== validToken) {
-        alert('!접근 불가!'); // 메시지 박스 띄우기
-        window.location.href = 'index.html'; // 사용자를 index.html로 리다이렉트
-    }
-}
-
-if (window.location.pathname.endsWith('roster.html')) {
-    checkAccess();
-}
-
-// function addUser() {
-//     const username = document.getElementById('user_name').value;
-//     const serverEndpoint = "http://ts2652.iptime.org:3000/add-user"; // 서버 주소로 변경
-
-//     fetch(serverEndpoint, {
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'application/json'
-//       },
-//       body: JSON.stringify({ username: username })
-//     })
-//     .then(response => response.json())
-//     .then(data => {
-//       if (data.message) {
-//         alert(data.message); // 서버에서 보낸 메시지를 알림으로 표시
-//       }
-//     })
-//     .catch(error => {
-//       console.error('There was an error!', error);
-//     });
-//   }
-
-//   document.getElementById('checkUserButton').addEventListener('click', () => {
-//     const username = document.getElementById('usernameInput').value;
-//     const serverEndpoint = "http://ts2652.iptime.org:3000/check-user"; // 서버 주소로 변경
-
-//     fetch(serverEndpoint, {
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'application/json'
-//       },
-//       body: JSON.stringify({ username: username })
-//     })
-//     .then(response => response.json())
-//     .then(data => {
-//       if (data.valid) {
-//         goToNextPage(); // 이 함수에서 토큰이 생성되고 다음 페이지로 리다이렉트됩니다.
-//     } else {
-//         alert('잘못된 사용자 이름입니다.');
-//     }
-//     })
-//     .catch(error => {
-//       console.error('There was an error!', error);
-//     });
-//   });
-
-function checkUserOnServer(username) {
-    const serverEndpoint = "/check-user";  // 프록시 서버를 통한 요청
-
-    fetch(serverEndpoint, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ username: username })
-    })
-    .then(response => response.json())
-    .then(data => {
-        if(data.valid) {
-            console.log("Valid username");
-        } else {
-            console.log("Invalid username");
-        }
-    })
-    .catch(error => {
-        console.error('There was an error!', error);
-    });
 }
