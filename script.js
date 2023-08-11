@@ -143,7 +143,7 @@ function accessProtectedPage() {
         })
         .then(data => {
             console.log(data.message);
-            window.location.href = 'roster.html'; // 보호된 페이지로 이동
+            window.location.href = 'https://ltuk.kr/roster.html'; // 보호된 페이지로 이동
         })
         .catch(error => {
             console.error('Error:', error);
@@ -167,10 +167,10 @@ function accessProtectedPage() {
 function redirectToRosterPage() {
     const token = localStorage.getItem('token');
     if (token) {
-        window.location.href = 'roster.html'; // 로그인되어 있을 때만 roster.html로 이동
+        window.location.href = 'https://ltuk.kr/roster.html'; // 로그인되어 있을 때만 roster.html로 이동
     } else {
         console.log('Token not available');
         // 로그인되어 있지 않으면 로그인 페이지로 리다이렉트
-        window.location.href = 'login.html';
+        window.location.href = 'https://ltuk.kr/index.html';
     }
 }
