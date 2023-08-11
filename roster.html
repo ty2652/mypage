@@ -77,24 +77,19 @@
         }
     </style>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            function redirectToIndex() { 
-                // 알람 메시지 표시
-                alert('암호가 틀렸습니다. 저에게 문의하세요.');
-                
-                // 바로 index.html로 이동
-                window.location.href = 'https://ltuk.kr/index.html';
-            }
+    function redirectToLogin() {
+        alert('비정상적인 접근 입니다. 저에게 문의하세요.');
+        window.location.href = 'https://ltuk.kr/index.html';
+    }
 
-            function checkTokenAndRedirect() {
-                const token = localStorage.getItem('token');
-                if (!token) {
-                    redirectToIndex();
-                }  
-            }
+    function checkTokenAndRedirect() {
+        const token = localStorage.getItem('token');
+        if (!token) {
+            redirectToLogin();
+        }
+    }
 
-            checkTokenAndRedirect(); // 페이지 로드 시 함수 호출
-        });
+    checkTokenAndRedirect(); // 페이지 로드 시 함수 호출
     </script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
