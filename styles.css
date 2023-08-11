@@ -78,9 +78,16 @@ form {
 }
 
 .searchInput-center {
-  display: flex;
+  display: none;
   justify-content: center;  /* 가로 중앙 정렬 */
 }
 .highlight {
   background-color: yellow;
+}
+.logo{
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  display: block;
+  margin: 0 auto;
 }
