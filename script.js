@@ -86,14 +86,10 @@ function allowEnglishNumbersAndSpecialCharacters(e) {
 function handleClick(event) {
     event.preventDefault();
          const profileDiv = document.querySelector('.profile-div');
-         const searchInput = document.querySelector('.searchInput-center');
      if (profileDiv.style.display === 'none') {
         document.getElementById('output').textContent = '';
          profileDiv.style.display = 'block';
-         searchInput.style.display = 'none';
      } else {
-        searchInput.classList.add('searchInput-center');
-        searchInput.style.display = 'flex';
          profileDiv.style.display = 'none';
      }
 }
