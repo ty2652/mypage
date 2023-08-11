@@ -77,7 +77,25 @@
         }
     </style>
     <script>
+        function redirectToLogin() {
+            console.log('Token not available');
+            // 토큰이 없을 때 메시지를 표시하고 로그인 페이지로 리다이렉트
+            document.body.innerHTML = '<p>You need a valid token to access this page.</p>';
+            setTimeout(() => {
+                window.location.href = 'https://ltuk.kr/index.html';
+            }, 3000); // 3초 후 로그인 페이지로 이동
+        }
 
+        function checkTokenAndRedirect() {
+            const token = localStorage.getItem('token');
+            if (!token) {
+                redirectToLogin();
+            } else {
+                console.log('Token in Roster Page:', token);
+            }
+        }
+
+        checkTokenAndRedirect(); // 페이지 로드 시 함수 호출
     </script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>

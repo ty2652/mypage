@@ -152,25 +152,3 @@ function accessProtectedPage() {
         console.log('Token not available');
     }
 }
-
-        // 로컬 스토리지에서 토큰 값 가져와서 콘솔에 출력
-        const token = localStorage.getItem('token');
-        if (token) {
-            console.log('Token in Roster Page:', token);
-        } else {
-            console.log('Token not available');
-        }
-
-        // Checkuser 함수 내의 코드와는 별도로 추가한 스크립트
-
-// 로그인 여부를 확인하고 roster.html로 이동하는 함수
-function redirectToRosterPage() {
-    const token = localStorage.getItem('token');
-    if (token) {
-        window.location.href = 'https://ltuk.kr/roster.html'; // 로그인되어 있을 때만 roster.html로 이동
-    } else {
-        console.log('Token not available');
-        // 로그인되어 있지 않으면 로그인 페이지로 리다이렉트
-        window.location.href = 'https://ltuk.kr/index.html';
-    }
-}
