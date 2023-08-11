@@ -95,3 +95,82 @@ function handleClick(event) {
          profileDiv.style.display = 'none';
      }
 }
+
+function Checkuser() {
+    const id = document.getElementById('username').value;
+    fetch(`http://localhost:3000/check-user/${id}`)
+    .then(response => {
+        if (response.ok) {
+            return response.json();
+        } else {
+            throw new Error('Network response was not ok');
+        }
+    })
+    .then(data => {
+        if (data.token) {
+            // 서버로부터 받은 토큰 값을 로컬 스토리지에 저장
+            localStorage.setItem('token', data.token);
+            console.log('Token received:', data.token);
+            
+            // 보호된 페이지로 이동
+            accessProtectedPage();
+        } else if (data.user === 'ps') {
+            // 보호된 페이지로 이동
+            accessProtectedPage();
+        } else {
+            console.log(data.user);
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
+
+function accessProtectedPage() {
+    const token = localStorage.getItem('token');
+    if (token) {
+        fetch('http://localhost:3000/protected', {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw new Error('Access denied');
+            }
+        })
+        .then(data => {
+            console.log(data.message);
+            window.location.href = 'roster.html'; // 보호된 페이지로 이동
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    } else {
+        console.log('Token not available');
+    }
+}
+
+        // 로컬 스토리지에서 토큰 값 가져와서 콘솔에 출력
+        const token = localStorage.getItem('token');
+        if (token) {
+            console.log('Token in Roster Page:', token);
+        } else {
+            console.log('Token not available');
+        }
+
+        // Checkuser 함수 내의 코드와는 별도로 추가한 스크립트
+
+// 로그인 여부를 확인하고 roster.html로 이동하는 함수
+function redirectToRosterPage() {
+    const token = localStorage.getItem('token');
+    if (token) {
+        window.location.href = 'roster.html'; // 로그인되어 있을 때만 roster.html로 이동
+    } else {
+        console.log('Token not available');
+        // 로그인되어 있지 않으면 로그인 페이지로 리다이렉트
+        window.location.href = 'login.html';
+    }
+}

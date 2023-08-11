@@ -9,155 +9,30 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <title>ps_WEB</title>
-    <link rel="icon" href="images/favicon.png" type="image/png">
-    <link href="styles.css" rel="stylesheet">
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="styles.css">
 
     <!--스타일-->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Yeon+Sung&display=swap');
-
 
         .main_form {
             max-width: 100%;
             height: auto; 
         }
 
-        img.profile {
-        width: 100%;
-        height: auto;  /* 이미지의 높이를 원래 비율에 맞게 조정 */
-        max-width: 100%; /* 부모 요소의 너비를 초과하지 않도록 설정 */
-        }
-
-        @keyframes focus-in-contract-bck {
-            0% {
-              letter-spacing: 1em;
-              -webkit-transform: translateZ(300px);
-                      transform: translateZ(300px);
-              -webkit-filter: blur(12px);
-                      filter: blur(12px);
-              opacity: 0;
-            }
-            100% {
-              -webkit-transform: translateZ(12px);
-                      transform: translateZ(12px);
-              -webkit-filter: blur(0);
-                      filter: blur(0);
-              opacity: 1;
-            }
-          }
-          element.style {
-            animation: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s 1 normal both running focus-in-contract-bck;
-        }
-        #text-object {
-            color: #3e3e3e;
-            text-align: center;
-            font: 60px/1 'TeXGyreAdventorBold';
-            text-transform: none;
-        }
-        .anim-object.active {
-            display: block;
-            z-index: 905;
-        }
-        .anim-object {
-            display: none;
-            -webkit-transform: translate3d(0,0,0);
-            transform: translate3d(0,0,0);
-        }
-        .jb-division-line {
-            border-top: 1px solid #444444;
-            margin: 30px 0px;
-          }
-          section{
-            text-align: center;
-        }
-        section article{
-            width: 200px;
-            height: 100px;
-            display: inline-block;
-        }
     </style>
-    <script>
 
-    </script>
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
 </head>
 
-<body>
- <header>
-    <div class="main_form">
-        <div class="form-group">
-            <!-- <img class= "logo" src="images/twitter_header_photo_2.png" alt="로고"> -->
-            <div class="anim-object active" id="text-object" style="animation: focus-in-contract-bck 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;">P&S</div>
-            <div class="jb-division-line"></div>
+<div class="center-container">
+    <form id="loginForm">
+        <h1><img src="images/twitter_header_photo_2.png"></h1>
+        <input type="text" id="username" name="username">
+        <input type="button" value="접속" onclick="Checkuser()">
+    </form>
+</div>
 
-        </div>
-    </div>
- </header>
-
-
- <body>
-    <section>
-        <!-- <article><button type="button" class="btn btn-primary" onclick="handleClick(event)">근무표</button></article>
-        <article><button type="button" class="btn btn-info">Etch</button></article>
-        <article><button type="button" class="btn btn-success">압력</button></article> -->
-        <article><a href="#" data-text="근무표" onclick="handleClick(event)"></a></article>
-        <article><a href="#" data-text="전체주기" onclick="allTextFile()"></a></article>
-        <!--<article><a href="#" data-text="압력" onclick=""></a></article>-->
-    </section>
-</body>
-            <div class="profile-div"
-            style="display: none;"><img 
-            src="images/근무자.png"
-            class="profile">
-            <img
-            src="images/당월초.png"
-            class="profile">
-            <img
-            src="images/당월말.png"
-            class="profile">
-            <img
-            src="images/익월초.png"
-            class="profile">
-            <img
-            src="images/익월말.png"
-            class="profile"></div>
-
-            <div class="searchInput-center">
-                <input type="text" id="searchInput" placeholder="장비코드 검색..." onkeyup="forceUppercaseEnglish(event); searchText();" onkeypress="return allowEnglishNumbersAndSpecialCharacters(event);">
-            </div>
-
-            <div>
-                <pre id="output"></pre>
-            </div>
-            
-
-    <!-- </div>
-    <div class="main_form">
-        <details>
-            <summary>8/9 기준 Etch</summary>
-
-            <table>
-                <tr>
-                  <td><img alt="" src="images/etch1.png" /></td><td><img alt="" src="images/etch2.png" /></td>
-                <tr>
-            </table>
-                <button onclick="etchTextFile()">8/9 기준 압력보기</button>
-                <pre id="output"></pre>
-                <script src="script.js"></script>
-
-                <button onclick="allTextFile()">8/9 기준 전체주기</button>
-                <pre id="output"></pre>
-                <script src="script.js"></script>
-         </details>
-    </div> -->
-
-
-
-</body>
+<script src="script.js"></script>
 
 </html>
