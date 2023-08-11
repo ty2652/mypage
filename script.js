@@ -108,16 +108,12 @@ function Checkuser() {
     })
     .then(data => {
         if (data.token) {
-            // 서버로부터 받은 토큰 값을 로컬 스토리지에 저장
             localStorage.setItem('token', data.token);
-            
-            // 보호된 페이지로 이동
-            accessProtectedPage();
-        } else if (data.user === 'ps') {
-            // 보호된 페이지로 이동
-            accessProtectedPage();
+            localStorage.setItem('refreshToken', data.refreshToken); // 새로운 리프레시 토큰 저장
+            redirectToRosterPage();
         } else {
-            alert('암호가 틀렸습니다. 저에게 문의하세요.');
+            // id가 "ps"가 아닐 경우 에러 메시지 표시
+            alert("암호가 틀렸습니다. 저에게 문의해주세요.");
         }
     })
     .catch(error => {
@@ -125,29 +121,35 @@ function Checkuser() {
     });
 }
 
-function accessProtectedPage() {
+function redirectToRosterPage() {
     const token = localStorage.getItem('token');
     if (token) {
-        fetch('https://port-0-psdb-ac2nll73fmem.sel3.cloudtype.app/protected', {
-            headers: {
-                'Authorization': `Bearer ${token}`
-            }
-        })
-        .then(response => {
-            if (response.ok) {
-                return response.json();
-            } else {
-                throw new Error('Access denied');
-            }
-        })
-        .then(data => {
-            console.log(data.message);
-            window.location.href = 'https://ltuk.kr/roster.html'; // 보호된 페이지로 이동
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
+        window.location.href = 'https://ltuk.kr/roster.html';
     } else {
-        console.log('Token not available');
+        alert('You need a valid token to access this page.');
+        window.location.href = 'https://ltuk.kr/index.html';
     }
 }
+
+// 5분마다 새로운 토큰 발급
+setInterval(() => {
+    const refreshToken = localStorage.getItem('refreshToken');
+    if (refreshToken) {
+        fetch('https://port-0-psdb-ac2nll73fmem.sel3.cloudtype.app/refresh-token', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ refreshToken: refreshToken })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.token) {
+                localStorage.setItem('token', data.token);
+            }
+        })
+        .catch(error => {
+            console.error('Error refreshing token:', error);
+        });
+    }
+}, 5 * 60 * 1000); // 5분마다 실행 (밀리초 단위)
