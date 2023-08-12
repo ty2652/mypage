@@ -77,7 +77,8 @@
         }
     </style>
     <script>
-        
+                // History API를 사용하여 주소창의 URL을 변경합니다.
+                history.replaceState({}, null, '/');
  window.addEventListener('beforeunload', function(event) {
     logout(); // 페이지가 닫힐 때 logout 함수 실행
 });
