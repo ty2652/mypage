@@ -94,7 +94,9 @@
         }
     }
 
-    checkTokenAndRedirect(); // 페이지 로드 시 함수 호출
+    document.addEventListener("DOMContentLoaded", function() {
+        checkTokenAndRedirect(); // 페이지 로드 후에 함수 호출
+    });
     </script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
