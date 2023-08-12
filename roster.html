@@ -84,6 +84,12 @@
     </style>
     <script>
 
+setInterval(() => {
+    location.reload();
+}, 60000); // 60000 밀리초 = 1분
+
+
+
  history.replaceState({}, null, '/');
  window.addEventListener('beforeunload', function(event) {
     logout(); // 페이지가 닫힐 때 logout 함수 실행
@@ -104,6 +110,9 @@
     document.addEventListener("DOMContentLoaded", function() {
         checkTokenAndRedirect(); // 페이지 로드 후에 함수 호출
     });
+
+    localStorage.removeItem('token');
+localStorage.removeItem('refreshToken');
     </script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
