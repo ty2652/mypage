@@ -84,6 +84,9 @@ function allowEnglishNumbersAndSpecialCharacters(e) {
 }
 
 function handleClick(event) {
+    localStorage.removeItem('token');
+    localStorage.removeItem('refreshToken');
+
     event.preventDefault();
          const profileDiv = document.querySelector('.profile-div');
          const searchInput = document.querySelector('.searchInput-center');
