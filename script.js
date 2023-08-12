@@ -44,7 +44,7 @@ function searchText() {
     // 검색어가 텍스트에 없는 경우
     if (!matches || matches.length === 0) {
         output.innerHTML = output.textContent;  // 하이라이트 제거
-        alert('검색 결과가 없습니다.');
+        showAlert('검색 결과가 없습니다.');
         return;
     }
 
@@ -158,3 +158,8 @@ function logout(){
       localStorage.removeItem('refreshToken'); // 리프레시 토큰도 삭제
       alert('Logged out successfully');
  }
+
+ function showAlert(message) {
+    // 모달 다이얼로그를 띄우는 코드
+    // 예를 들어 Bootstrap의 모달을 사용하거나, 다른 모달 라이브러리를 활용할 수 있습니다.
+}
