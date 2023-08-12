@@ -107,12 +107,12 @@ function Checkuser() {
         }
     })
     .then(data => {
+
         if (data.token) {
             localStorage.setItem('token', data.token);
             localStorage.setItem('refreshToken', data.refreshToken); // 새로운 리프레시 토큰 저장
             redirectToRosterPage();
         } else {
-            // id가 "ps"가 아닐 경우 에러 메시지 표시
             alert("암호가 틀렸습니다. 저에게 문의해주세요.");
         }
     })
@@ -158,8 +158,3 @@ function logout(){
       localStorage.removeItem('refreshToken'); // 리프레시 토큰도 삭제
       alert('Logged out successfully');
  }
-
- function showAlert(message) {
-    // 모달 다이얼로그를 띄우는 코드
-    // 예를 들어 Bootstrap의 모달을 사용하거나, 다른 모달 라이브러리를 활용할 수 있습니다.
-}
